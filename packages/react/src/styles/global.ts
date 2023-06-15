@@ -1,23 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :focus {
-    outline: 0;
-  }
-
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-
-  body, input, textarea, button {
-    font-family: ${({ theme }) => theme.fonts.default};
-    font-weight: ${({ theme }) => theme.fontWeights.regular};
-    font-size: ${({ theme }) => theme.fontSizes.md};
-  }
+const GlobalStyles = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 `
+
+export default GlobalStyles

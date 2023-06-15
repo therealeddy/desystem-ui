@@ -1,3 +1,6 @@
+import { withThemeFromJSXProvider } from '@storybook/addon-styling';
+import { ThemeProvider, GlobalStyles, lightTheme } from '@desystem-ui/react';
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
@@ -10,5 +13,16 @@ const preview = {
     },
   },
 };
+
+export const decorators = [
+  withThemeFromJSXProvider({
+    themes: {
+      light: lightTheme,
+    },
+    defaultTheme: 'light',
+    Provider: ThemeProvider,
+    GlobalStyles,
+  })
+];
 
 export default preview;

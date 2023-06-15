@@ -8,7 +8,7 @@ import {
   space,
 } from '@desystem-ui/tokens'
 
-export const defaultTheme = {
+const lightTheme = {
   colors,
   fontSizes,
   fontWeights,
@@ -17,3 +17,5 @@ export const defaultTheme = {
   radii,
   space,
 }
+
+export default lightTheme
