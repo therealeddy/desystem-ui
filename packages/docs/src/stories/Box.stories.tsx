@@ -1,15 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Box, BoxProps } from '@desystem-ui/react'
+import { Box, BoxProps, Text } from '@desystem-ui/react'
 
 export default {
   title: 'Surfaces/Box',
   component: Box,
+  tags: ['autodocs'],
   args: {
-    children: (
-      <>
-        <span>Testando o elemento Box</span>
-      </>
-    ),
+    children: <Text>Testando o elemento Box</Text>,
   },
 } as Meta<BoxProps>
 

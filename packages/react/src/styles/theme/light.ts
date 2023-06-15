@@ -16,6 +16,6 @@ const lightTheme = {
   lineHeights,
   radii,
   space,
-}
+} as const
 
 export default lightTheme

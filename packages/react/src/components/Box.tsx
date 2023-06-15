@@ -1,6 +1,9 @@
+import { ElementType } from 'react'
 import styled from 'styled-components'
 
-export interface BoxProps {}
+export interface BoxProps {
+  as?: ElementType
+}
 
 export const Box = styled.div`
   padding: ${(props) => props.theme.space[4]};
