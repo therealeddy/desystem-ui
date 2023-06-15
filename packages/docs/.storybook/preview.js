@@ -1,4 +1,6 @@
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
+import { themes } from '@storybook/theming'
+
 import { ThemeProvider, GlobalStyles, lightTheme } from '@desystem-ui/react';
 
 /** @type { import('@storybook/react').Preview } */
@@ -11,6 +13,9 @@ const preview = {
         date: /Date$/,
       },
     },
+    docs: {
+      theme: themes.dark
+    }
   },
 };
 

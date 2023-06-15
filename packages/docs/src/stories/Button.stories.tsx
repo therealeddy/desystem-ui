@@ -4,7 +4,7 @@ import { Button, ButtonProps } from '@desystem-ui/react'
 type Props = StoryObj<ButtonProps>
 
 export default {
-  title: 'Button',
+  title: 'Form/Button',
   component: Button,
 
   args: {
