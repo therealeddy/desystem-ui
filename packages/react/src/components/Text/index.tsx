@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { ComponentProps } from 'react'
 
-interface Props {
+interface DefaultProps {
   size?:
     | 'xxs'
     | 'xs'
@@ -18,7 +18,7 @@ interface Props {
     | '9xl'
 }
 
-export const Text = styled.p<Props>`
+export const Text = styled.p<DefaultProps>`
   font-family: ${(props) => props.theme.fonts.default};
   line-height: ${(props) => props.theme.lineHeights.base};
   margin: 0;

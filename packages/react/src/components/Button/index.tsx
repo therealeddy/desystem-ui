@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 import { ComponentProps } from 'react'
 
-interface Props {
+interface DefaultProps {
   variant?: 'primary' | 'secondary' | 'tertiary'
   size?: 'sm' | 'md' | 'tertiary'
   disabled?: boolean
 }
 
-export const Button = styled.button<Props>`
+export const Button = styled.button<DefaultProps>`
   all: unset;
   border-radius: ${(props) => props.theme.radii.sm};
   font-size: ${(props) => props.theme.fontSizes.sm};
