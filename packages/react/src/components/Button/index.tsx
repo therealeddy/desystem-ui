@@ -1,30 +1,98 @@
 import styled, { css } from 'styled-components'
+import { ComponentProps } from 'react'
 
-export type ButtonProps = {
-  size?: 'small' | 'big'
+interface DefaultProps {
+  variant?: 'primary' | 'secondary' | 'tertiary'
+  size?: 'sm' | 'md' | 'tertiary'
+  disabled?: boolean
 }
 
-export const Button = styled.button<ButtonProps>`
-  font-family: ${(props) => props.theme.fonts.default};
-  background-color: ${(props) => props.theme.colors.green300};
+export const Button = styled.button<DefaultProps>`
+  all: unset;
   border-radius: ${(props) => props.theme.radii.sm};
-  border: 0;
-  font-weight: bold;
-  color: ${(props) => props.theme.colors.white};
+  font-size: ${(props) => props.theme.fontSizes.sm};
+  font-weight: ${(props) => props.theme.fontWeights.medium};
+  font-family: ${(props) => props.theme.fonts.default};
+  text-align: center;
+  min-width: 120px;
+  box-sizing: border-box;
+  padding: 0 ${(props) => props.theme.space[4]};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${(props) => props.theme.space[2]};
+
+  cursor: pointer;
+
+  svg: {
+    width: ${(props) => props.theme.space[4]};
+    height: ${(props) => props.theme.space[4]};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 
   ${(props) =>
-    (!props.size || props.size === 'small') &&
+    (!props.variant || props.variant === 'primary') &&
     css`
-      font-size: 14;
-      padding: ${(props) => props.theme.space[2]}
-        ${(props) => props.theme.space[4]};
+      color: ${(props) => props.theme.colors.white};
+      background: ${(props) => props.theme.colors.green500};
+
+      &:not(:disabled):hover {
+        background: ${(props) => props.theme.colors.green300};
+      }
+
+      &:disabled {
+        background-color: ${(props) => props.theme.colors.gray200};
+      }
     `}
 
   ${(props) =>
-    props.size === 'big' &&
+    props.variant === 'secondary' &&
     css`
-      font-size: 16;
-      padding: ${(props) => props.theme.space[3]}
-        ${(props) => props.theme.space[6]};
+      color: ${(props) => props.theme.colors.green300};
+      border: 2px solid ${(props) => props.theme.colors.green500};
+
+      &:not(:disabled):hover {
+        background: ${(props) => props.theme.colors.green500};
+        color: ${(props) => props.theme.colors.white};
+      }
+
+      &:disabled {
+        color: ${(props) => props.theme.colors.gray200};
+        border-color: ${(props) => props.theme.colors.gray200};
+      }
+    `}
+
+  ${(props) =>
+    props.variant === 'tertiary' &&
+    css`
+      color: ${(props) => props.theme.colors.gray100};
+
+      &:not(:disabled):hover {
+        color: ${(props) => props.theme.colors.white};
+      }
+
+      &:disabled {
+        color: ${(props) => props.theme.colors.gray600};
+      }
+    `}
+
+  ${(props) =>
+    props.size === 'sm' &&
+    css`
+      height: 38px;
+    `}
+    
+  ${(props) =>
+    (!props.size || props.size === 'md') &&
+    css`
+      height: 46px;
     `}
 `
+
+export interface ButtonProps extends ComponentProps<typeof Button> {}
+
+Button.displayName = 'Button'

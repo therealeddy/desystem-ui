@@ -1,21 +1,76 @@
-import type { StoryObj, Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Button, ButtonProps } from '@desystem-ui/react'
-
-type Props = StoryObj<ButtonProps>
+import { ArrowRight } from 'phosphor-react'
 
 export default {
   title: 'Form/Button',
   component: Button,
-
+  tags: ['autodocs'],
   args: {
-    children: 'Enviar',
+    children: 'Send',
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
+  },
+  argTypes: {
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    onClick: {
+      action: 'click',
+    },
   },
 } as Meta<ButtonProps>
 
-export const Primary: Props = {}
+export const Primary: StoryObj<ButtonProps> = {}
 
-export const Big: Props = {
+export const Secondary: StoryObj<ButtonProps> = {
   args: {
-    size: 'big',
+    variant: 'secondary',
+    children: 'Create new',
+  },
+}
+
+export const Tertiary: StoryObj<ButtonProps> = {
+  args: {
+    variant: 'tertiary',
+    children: 'Cancel',
+  },
+}
+
+export const Small: StoryObj<ButtonProps> = {
+  args: {
+    size: 'sm',
+  },
+}
+
+export const WithIcon: StoryObj<ButtonProps> = {
+  args: {
+    children: (
+      <>
+        Próximo passo
+        <ArrowRight weight="bold" />
+      </>
+    ),
+  },
+}
+
+export const Disabled: StoryObj<ButtonProps> = {
+  args: {
+    disabled: true,
   },
 }
