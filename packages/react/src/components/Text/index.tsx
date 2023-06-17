@@ -34,3 +34,5 @@ export const Text = styled.p<DefaultProps>`
 `
 
 export interface TextProps extends ComponentProps<typeof Text> {}
+
+Text.displayName = 'Text'

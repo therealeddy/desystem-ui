@@ -5,7 +5,16 @@ export default {
   title: 'Form/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
-  args: {},
+  args: {
+    checked: false,
+  },
+  argTypes: {
+    checked: {
+      control: {
+        type: 'boolean',
+      },
+    },
+  },
   decorators: [
     (Story) => {
       return (

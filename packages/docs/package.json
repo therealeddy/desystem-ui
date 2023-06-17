@@ -28,9 +28,10 @@
   },
   "dependencies": {
     "@desystem-ui/eslint-config": "*",
-    "@desystem-ui/ts-config": "*",
     "@desystem-ui/react": "*",
     "@desystem-ui/tokens": "*",
+    "@desystem-ui/ts-config": "*",
+    "@storybook/addon-a11y": "^7.0.21",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

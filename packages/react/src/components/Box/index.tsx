@@ -11,3 +11,5 @@ export const Box = styled.div<DefaultProps>`
 `
 
 export interface BoxProps extends ComponentProps<typeof Box> {}
+
+Box.displayName = 'Box'

@@ -94,3 +94,5 @@ export const Button = styled.button<DefaultProps>`
 `
 
 export interface ButtonProps extends ComponentProps<typeof Button> {}
+
+Button.displayName = 'Button'
