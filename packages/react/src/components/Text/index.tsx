@@ -1,7 +1,7 @@
-import { ElementType } from 'react'
 import styled, { css } from 'styled-components'
+import { ComponentProps } from 'react'
 
-export interface TextProps {
+interface Props {
   size?:
     | 'xxs'
     | 'xs'
@@ -16,10 +16,9 @@ export interface TextProps {
     | '7xl'
     | '8xl'
     | '9xl'
-  as?: ElementType
 }
 
-export const Text = styled.p<TextProps>`
+export const Text = styled.p<Props>`
   font-family: ${(props) => props.theme.fonts.default};
   line-height: ${(props) => props.theme.lineHeights.base};
   margin: 0;
@@ -33,3 +32,5 @@ export const Text = styled.p<TextProps>`
       font-size: ${props.theme.fontSizes[props.size]};
     `}
 `
+
+export interface TextProps extends ComponentProps<typeof Text> {}

@@ -1,9 +1,8 @@
-import { ElementType } from 'react'
+import { ComponentProps } from 'react'
 import styled, { css } from 'styled-components'
 
-export interface HeadingProps {
+interface Props {
   size?: 'sm' | 'md' | 'lg' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
-  as?: ElementType
 }
 
 const sizes = {
@@ -17,7 +16,7 @@ const sizes = {
   '6xl': '9xl',
 } as const
 
-export const Heading = styled.h2<HeadingProps>`
+export const Heading = styled.h2<Props>`
   font-family: ${(props) => props.theme.fonts.default};
   line-height: ${(props) => props.theme.lineHeights.base};
   margin: 0;
@@ -31,3 +30,5 @@ export const Heading = styled.h2<HeadingProps>`
       font-size: ${props.theme.fontSizes[sizes[props.size]]};
     `}
 `
+
+export interface HeadingProps extends ComponentProps<typeof Heading> {}
