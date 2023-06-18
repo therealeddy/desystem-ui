@@ -6,7 +6,8 @@
   "scripts": {
     "build": "storybook build",
     "dev": "storybook dev -p 6006",
-    "lint": "eslint src/**/*.ts* --fix"
+    "lint": "eslint src/**/*.ts* --fix",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
   "author": "",
