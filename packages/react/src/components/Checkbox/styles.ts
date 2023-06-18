@@ -20,7 +20,8 @@ export const CheckboxContainer = styled(Checkbox.Root)`
     background-color: ${(props) => props.theme.colors.green300};
   }
 
-  &:focus {
+  &:focus,
+  &[data-state='checked'] {
     border: 2px solid ${(props) => props.theme.colors.green300};
   }
 `

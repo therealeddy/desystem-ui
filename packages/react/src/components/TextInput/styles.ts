@@ -1,13 +1,31 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const TextInputContainer = styled.div`
+interface TextInputContainerProps {
+  size?: 'md' | 'sm'
+}
+
+export const TextInputContainer = styled.div<TextInputContainerProps>`
   background-color: ${(props) => props.theme.colors.gray900};
-  padding: ${(props) => props.theme.space[3]} ${(props) => props.theme.space[4]};
+
   border-radius: ${(props) => props.theme.radii.sm};
   box-sizing: border-box;
   border: 2px solid ${(props) => props.theme.colors.gray900};
   display: flex;
-  align-items: baseline;
+  align-items: center;
+
+  ${(props) =>
+    props.size === 'sm' &&
+    css`
+      padding: ${(props) => props.theme.space[2]}
+        ${(props) => props.theme.space[3]};
+    `}
+
+  ${(props) =>
+    (!props.size || props.size === 'md') &&
+    css`
+      padding: ${(props) => props.theme.space[3]}
+        ${(props) => props.theme.space[4]};
+    `}
 
   &:has(input:focus) {
     border-color: ${(props) => props.theme.colors.green300};

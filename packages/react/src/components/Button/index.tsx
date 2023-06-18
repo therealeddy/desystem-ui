@@ -34,6 +34,10 @@ export const Button = styled.button<DefaultProps>`
     cursor: not-allowed;
   }
 
+  &:focus {
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colors.gray100};
+  }
+
   ${(props) =>
     (!props.variant || props.variant === 'primary') &&
     css`

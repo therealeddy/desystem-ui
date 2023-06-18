@@ -4,7 +4,7 @@ import styled from 'styled-components'
 interface DefaultProps {}
 
 export const Box = styled.div<DefaultProps>`
-  padding: ${(props) => props.theme.space[4]};
+  padding: ${(props) => props.theme.space[6]};
   border-radius: ${(props) => props.theme.radii.md};
   background-color: ${(props) => props.theme.colors.gray800};
   border: 1px solid ${(props) => props.theme.colors.gray600};
